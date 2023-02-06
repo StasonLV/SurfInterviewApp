@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct MockData{
-    
+struct MockData {
     static let shared = MockData()
-    
+
     private let intro: SectionData = {
         .intro([.init(title: "Android"),
                 .init(title: "iOS"),
@@ -19,16 +18,16 @@ struct MockData{
                 .init(title: "Flutter"),
                 .init(title: "PM")])
     }()
-    
+
     private let conditions: SectionData = {
         .conditions([.init(title: "Android"),
-                .init(title: "iOS"),
-                .init(title: "QA"),
                 .init(title: "Design"),
+                .init(title: "QA"),
+                .init(title: "iOS"),
                 .init(title: "Flutter"),
                 .init(title: "PM")])
     }()
-    
+
     var pageData: [SectionData] {
         [intro, conditions]
     }

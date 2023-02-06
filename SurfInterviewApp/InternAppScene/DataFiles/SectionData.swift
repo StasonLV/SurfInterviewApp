@@ -10,7 +10,7 @@ import Foundation
 enum SectionData {
     case intro([ItemData])
     case conditions([ItemData])
-    
+
     var items: [ItemData] {
         switch self {
         case .intro(let items),
@@ -18,11 +18,11 @@ enum SectionData {
             return items
         }
     }
-    
+
     var count: Int {
         items.count
     }
-    
+
     var title: String {
         switch self {
         case .intro(_):

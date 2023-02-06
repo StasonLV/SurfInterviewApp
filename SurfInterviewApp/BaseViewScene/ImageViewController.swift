@@ -8,7 +8,6 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .darkContent
     }
@@ -19,17 +18,22 @@ class ImageViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        prepareMainVC()
+    }
+    
+    private func prepareMainVC() {
         let myVC = InternshipViewController()
         if let sheet = myVC.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
             sheet.preferredCornerRadius = 30
         }
         self.present(myVC, animated: false, completion: nil)
+        myVC.isModalInPresentation = true
     }
 }
 
 extension ImageViewController {
-    func setBackgroundImage(imageName: String) {
+    private func setBackgroundImage(imageName: String) {
         let backgroundImage = UIImage(named: imageName)
         let backgroundImageView = UIImageView(frame: self.view.frame)
         backgroundImageView.image = backgroundImage

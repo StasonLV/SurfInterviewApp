@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
@@ -23,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = mainVC
         window?.makeKeyAndVisible()
     }
-    
+
     func sceneDidDisconnect(_ scene: UIScene) {
     }
 
@@ -38,7 +37,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
-
-
 }
-
