@@ -20,11 +20,18 @@ struct MockData {
     }()
 
     private let conditions: SectionData = {
-        .conditions([.init(title: "Android"),
+        .conditions([.init(title: "Flutter"),
                 .init(title: "Design"),
-                .init(title: "QA"),
+                .init(title: "Android"),
                 .init(title: "iOS"),
                 .init(title: "Flutter"),
+                .init(title: "Web2"),
+                .init(title: "QA"),
+                .init(title: "Web3"),
+                .init(title: "Flutter"),
+                .init(title: "Web4"),
+                .init(title: "DevOps"),
+                .init(title: "Аналитика"),
                 .init(title: "PM")])
     }()
 

@@ -133,7 +133,6 @@ extension InternshipViewController {
     }
 
     // MARK: - метод лейаута для второй секции
-    
     private func createConditionsSection() -> NSCollectionLayoutSection {
 
         let item = NSCollectionLayoutItem(
@@ -155,8 +154,8 @@ extension InternshipViewController {
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.interGroupSpacing = 10
-        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 24, trailing: 0)
+        section.interGroupSpacing = 5
+        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 24, trailing: 25)
         section.boundarySupplementaryItems = [supplementaryHeaderItem()]
         return section
     }
