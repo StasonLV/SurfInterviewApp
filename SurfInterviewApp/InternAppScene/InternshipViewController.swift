@@ -7,11 +7,18 @@
 
 import UIKit
 
-class InternshipViewController: UIViewController {
+final class InternshipViewController: UIViewController {
     //MARK: Константы
     private enum Constants {
         enum ButtonConstants {
-            
+            static let title: String = "Отправить заявку"
+            static let cornerRad: CGFloat = 32
+            static let color: UIColor = UIColor(
+                red: 0.192,
+                green: 0.192,
+                blue: 0.192,
+                alpha: 1
+            )
         }
         enum FontConstants {
             static let nameLabelText: String = "Стажировка в Surf"
@@ -64,10 +71,15 @@ class InternshipViewController: UIViewController {
 
     lazy var applyButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Отправить заявку", for: .normal)
-        button.backgroundColor = UIColor(red: 0.192, green: 0.192, blue: 0.192, alpha: 1)
-        button.layer.cornerRadius = 32
-        button.addTarget(self, action: #selector(presentAlert), for: .touchUpInside)
+        button.setTitle(Constants.ButtonConstants.title, for: .normal)
+        button.backgroundColor = Constants.ButtonConstants.color
+        button.layer.cornerRadius = Constants.ButtonConstants.cornerRad
+        button.addTarget(
+            self,
+            action: #selector(presentAlert),
+            for: .touchUpInside
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -95,6 +107,7 @@ class InternshipViewController: UIViewController {
         view.addSubview(collectionView)
         view.addSubview(nameLabel)
         view.bringSubviewToFront(applyButton)
+        view.bringSubviewToFront(applyLabel)
         collectionView.register(
             CourseViewCell.self,
             forCellWithReuseIdentifier: "CourseCell"
@@ -104,7 +117,6 @@ class InternshipViewController: UIViewController {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: "header"
         )
-        applyButton.translatesAutoresizingMaskIntoConstraints = false
         collectionView.collectionViewLayout = createLayout()
 
         NSLayoutConstraint.activate([

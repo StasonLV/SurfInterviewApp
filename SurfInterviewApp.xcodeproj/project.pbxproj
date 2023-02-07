@@ -70,10 +70,9 @@
 		841C2744298FC9A30011E0A6 /* SurfInterviewApp */ = {
 			isa = PBXGroup;
 			children = (
+				841C278D2992AC1B0011E0A6 /* ApplicationLayer */,
 				841C2779299027B90011E0A6 /* BaseViewScene */,
 				841C2759298FCABB0011E0A6 /* InternAppScene */,
-				841C2745298FC9A30011E0A6 /* AppDelegate.swift */,
-				841C2747298FC9A30011E0A6 /* SceneDelegate.swift */,
 				841C274E298FC9AA0011E0A6 /* Assets.xcassets */,
 				841C2750298FC9AA0011E0A6 /* LaunchScreen.storyboard */,
 				841C2753298FC9AA0011E0A6 /* Info.plist */,
@@ -110,6 +109,15 @@
 				841C277E29902A360011E0A6 /* MockData.swift */,
 			);
 			path = DataFiles;
+			sourceTree = "<group>";
+		};
+		841C278D2992AC1B0011E0A6 /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				841C2747298FC9A30011E0A6 /* SceneDelegate.swift */,
+				841C2745298FC9A30011E0A6 /* AppDelegate.swift */,
+			);
+			path = ApplicationLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+final class ImageViewController: UIViewController {
+    //MARK: Установка цвета статусбара
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .darkContent
     }
-    
+
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundImage(imageName: "background.jpeg")
@@ -20,7 +22,8 @@ class ImageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         prepareMainVC()
     }
-    
+
+    //MARK: Метод настройки отоборажения вьюконтроллера с информацией
     private func prepareMainVC() {
         let myVC = InternshipViewController()
         if let sheet = myVC.sheetPresentationController {
@@ -32,6 +35,7 @@ class ImageViewController: UIViewController {
     }
 }
 
+//MARK: Экстеншн для фоновой картинки
 extension ImageViewController {
     private func setBackgroundImage(imageName: String) {
         let backgroundImage = UIImage(named: imageName)

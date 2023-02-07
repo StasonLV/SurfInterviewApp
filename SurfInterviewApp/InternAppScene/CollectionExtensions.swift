@@ -8,31 +8,39 @@
 import UIKit
 
 extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    // MARK: - методы настройки коллекции в зависимости от датасорса
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        MockData.shared.pageData.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        MockData.shared.pageData[section].count
+    }
+
     // MARK: - метод для селекта и деселекта ячеек
     func collectionView(
         _ collectionView: UICollectionView,
         shouldSelectItemAt indexPath: IndexPath
     ) -> Bool {
         let item = collectionView.cellForItem(at: indexPath)
-            if item?.isSelected ?? false {
-                collectionView.deselectItem(at: indexPath, animated: true)
-            } else {
-                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
-                DispatchQueue.main.async {
-                    collectionView.moveItem(at: indexPath, to: IndexPath(item: 0, section: indexPath.section))
-                }
-                return true
+        if item?.isSelected ?? false {
+            collectionView.deselectItem(at: indexPath, animated: true)
+        } else {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+            DispatchQueue.main.async {
+                collectionView.moveItem(at: indexPath, to: IndexPath(item: 0, section: indexPath.section))
             }
-            return false
+            return true
         }
-    
+        return false
+    }
+
     // MARK: - метод настройки хедера секций
     func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
-
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(
@@ -47,16 +55,7 @@ extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionReusableView()
         }
     }
-    
-    // MARK: - методы настройки коллекции в зависимости от датасорса
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        MockData.shared.pageData.count
-    }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        MockData.shared.pageData[section].count
-    }
-    
     // MARK: - настройка ячеек колекции
     func collectionView(
         _ collectionView: UICollectionView,
@@ -90,7 +89,7 @@ extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 //Несмотря на то что ячейки использую одинаковые, оставил перебор по кейсам на случай, если нужно будет переделать под разные.
 
-// MARK: - настройка лейаутов секций
+// MARK: - экстеншн с настройкой лейаутов секций
 extension InternshipViewController {
     func createLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { sectionIndex, _ in
@@ -106,24 +105,24 @@ extension InternshipViewController {
 
     // MARK: - метод лейаута для первой секции
     private func createIntroSection() -> NSCollectionLayoutSection {
-
+        
         let item = NSCollectionLayoutItem(
             layoutSize: .init(
                 widthDimension: .estimated(200),
                 heightDimension: .estimated(44)
             )
         )
-
+        
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(
-            widthDimension: .absolute(700),
-            heightDimension: .estimated(44)
-        ),
+                widthDimension: .absolute(700),
+                heightDimension: .estimated(44)
+            ),
             subitems: [item]
         )
         group.interItemSpacing = .fixed(12)
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
-
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.interGroupSpacing = 10
@@ -134,24 +133,24 @@ extension InternshipViewController {
 
     // MARK: - метод лейаута для второй секции
     private func createConditionsSection() -> NSCollectionLayoutSection {
-
+        
         let item = NSCollectionLayoutItem(
             layoutSize: .init(
                 widthDimension: .estimated(80),
                 heightDimension: .estimated(44)
             )
         )
-
+        
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: .init(
                 widthDimension: .fractionalWidth(0.2),
                 heightDimension: .absolute(100)
-        ),
+            ),
             subitems: [item]
         )
         group.interItemSpacing = .flexible(5)
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
-
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.interGroupSpacing = 5
@@ -165,8 +164,8 @@ extension InternshipViewController {
         .init(layoutSize: .init(
             widthDimension: .fractionalWidth(1),
             heightDimension: .estimated(80)),
-              elementKind: UICollectionView.elementKindSectionHeader,
-              alignment: .top
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
         )
     }
 }

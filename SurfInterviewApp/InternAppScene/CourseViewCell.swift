@@ -25,7 +25,6 @@ final class CourseViewCell: UICollectionViewCell {
                 alpha: 1
             )
         }
-
         enum ViewConstants {
             static let selectedBackColor = UIColor(
                 red: 0.192,
