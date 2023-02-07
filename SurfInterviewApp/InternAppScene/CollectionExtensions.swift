@@ -8,7 +8,7 @@
 import UIKit
 
 extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
+    // MARK: - метод для селекта и деселекта ячеек
     func collectionView(
         _ collectionView: UICollectionView,
         shouldSelectItemAt indexPath: IndexPath
@@ -24,6 +24,7 @@ extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDa
             return false
         }
     
+    // MARK: - метод настройки хедера секций
     func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
@@ -44,7 +45,8 @@ extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionReusableView()
         }
     }
-
+    
+    // MARK: - методы настройки коллекции в зависимости от датасорса
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         MockData.shared.pageData.count
     }
@@ -52,7 +54,8 @@ extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         MockData.shared.pageData[section].count
     }
-
+    
+    // MARK: - настройка ячеек колекции
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
@@ -83,7 +86,9 @@ extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDa
         }
     }
 }
+//Несмотря на то что ячейки использую одинаковые, оставил перебор по кейсам на случай, если нужно будет переделать под разные.
 
+// MARK: - настройка лейаутов секций
 extension InternshipViewController {
     func createLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { sectionIndex, _ in
@@ -97,6 +102,7 @@ extension InternshipViewController {
         }
     }
 
+    // MARK: - метод лейаута для первой секции
     private func createIntroSection() -> NSCollectionLayoutSection {
 
         let item = NSCollectionLayoutItem(
@@ -124,6 +130,8 @@ extension InternshipViewController {
         return section
     }
 
+    // MARK: - метод лейаута для второй секции
+    
     private func createConditionsSection() -> NSCollectionLayoutSection {
 
         let item = NSCollectionLayoutItem(
@@ -151,6 +159,7 @@ extension InternshipViewController {
         return section
     }
 
+    // MARK: - метод создания хэдэра
     private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
         .init(layoutSize: .init(
             widthDimension: .fractionalWidth(1),
