@@ -18,9 +18,11 @@ extension InternshipViewController: UICollectionViewDelegate, UICollectionViewDa
                 collectionView.deselectItem(at: indexPath, animated: true)
             } else {
                 collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+                DispatchQueue.main.async {
+                    collectionView.moveItem(at: indexPath, to: IndexPath(item: 0, section: indexPath.section))
+                }
                 return true
             }
-
             return false
         }
     
