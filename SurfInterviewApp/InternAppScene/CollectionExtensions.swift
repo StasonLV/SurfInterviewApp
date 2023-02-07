@@ -155,7 +155,7 @@ extension InternshipViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.interGroupSpacing = 5
-        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 24, trailing: 25)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 24, trailing: 40)
         section.boundarySupplementaryItems = [supplementaryHeaderItem()]
         return section
     }
