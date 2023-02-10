@@ -23,16 +23,18 @@ final class ImageViewController: UIViewController {
         prepareMainVC()
     }
 
-    //MARK: Метод настройки отоборажения вьюконтроллера с информацией
+    //MARK: Метод настройки отоборажения InternshipViewController
     private func prepareMainVC() {
         let myVC = InternshipViewController()
         if let sheet = myVC.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
             sheet.preferredCornerRadius = 30
         }
-        self.present(myVC, animated: false, completion: nil)
+        self.present(myVC, animated: true, completion: nil)
         myVC.isModalInPresentation = true
     }
+    
+
 }
 
 //MARK: Экстеншн для фоновой картинки
