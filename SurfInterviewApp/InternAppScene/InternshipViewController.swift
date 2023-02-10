@@ -54,7 +54,7 @@ final class InternshipViewController: UIViewController {
         view.bringSubviewToFront(buttonView)
     }
 
-    //MARK: Приватные методы класса. Настройка юай и делегатов.
+    //MARK: Приватные методы класса. Настройка юай и делегатов, презетация алерта.
     private func setDelegates() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -87,7 +87,7 @@ final class InternshipViewController: UIViewController {
             buttonView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             buttonView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             buttonView.heightAnchor.constraint(equalToConstant: 120),
-                        
+
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24),
