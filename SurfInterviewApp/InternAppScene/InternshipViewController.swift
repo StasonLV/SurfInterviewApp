@@ -10,20 +10,8 @@ import UIKit
 final class InternshipViewController: UIViewController {
     //MARK: Константы
     private enum Constants {
-        enum ButtonConstants {
-            static let title: String = "Отправить заявку"
-            static let cornerRad: CGFloat = 32
-            static let color: UIColor = UIColor(
-                red: 0.192,
-                green: 0.192,
-                blue: 0.192,
-                alpha: 1
-            )
-        }
         enum FontConstants {
             static let nameLabelText: String = "Стажировка в Surf"
-            static let applyLabelText: String = "Хочешь к нам?"
-            static let applyLabelFont: UIFont = .systemFont(ofSize: 14, weight: .regular)
             static let nameLabelFont: UIFont = .systemFont(ofSize: 24, weight: .bold)
             static let nameLabelFontColor: UIColor = UIColor(
                 red: 0.192,
@@ -31,16 +19,12 @@ final class InternshipViewController: UIViewController {
                 blue: 0.192,
                 alpha: 1
             )
-            static let applyLabelFontColor: UIColor = UIColor(
-                red: 0.588,
-                green: 0.584,
-                blue: 0.608,
-                alpha: 1
-            )
         }
     }
     
     //MARK: Создание элементов экрана
+    private let buttonView = ButtonContainerView(frame: .zero)
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.FontConstants.nameLabelText
@@ -58,36 +42,16 @@ final class InternshipViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
-    
-    private let applyLabel: UILabel = {
-        let label = UILabel()
-        label.text = Constants.FontConstants.applyLabelText
-        label.font = Constants.FontConstants.applyLabelFont
-        label.textColor = Constants.FontConstants.applyLabelFontColor
-        label.sizeToFit()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    lazy var applyButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(Constants.ButtonConstants.title, for: .normal)
-        button.backgroundColor = Constants.ButtonConstants.color
-        button.layer.cornerRadius = Constants.ButtonConstants.cornerRad
-        button.addTarget(
-            self,
-            action: #selector(presentAlert),
-            for: .touchUpInside
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
 
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setDelegates()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        view.bringSubviewToFront(buttonView)
     }
 
     //MARK: Приватные методы класса. Настройка юай и делегатов.
@@ -102,12 +66,11 @@ final class InternshipViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
-        view.addSubview(applyLabel)
-        view.addSubview(applyButton)
+        view.addSubview(buttonView)
         view.addSubview(collectionView)
         view.addSubview(nameLabel)
-        view.bringSubviewToFront(applyButton)
-        view.bringSubviewToFront(applyLabel)
+        buttonView.addApplyButtonTarget(self, action: #selector(presentAlert))
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(
             CourseViewCell.self,
             forCellWithReuseIdentifier: "CourseCell"
@@ -120,15 +83,11 @@ final class InternshipViewController: UIViewController {
         collectionView.collectionViewLayout = createLayout()
 
         NSLayoutConstraint.activate([
-            applyButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
-            applyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            applyButton.widthAnchor.constraint(equalToConstant: 219),
-            applyButton.heightAnchor.constraint(equalToConstant: 60),
-            
-            applyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            applyLabel.centerYAnchor.constraint(equalTo: applyButton.centerYAnchor),
-            applyLabel.heightAnchor.constraint(equalToConstant: 20),
-            
+            buttonView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            buttonView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            buttonView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            buttonView.heightAnchor.constraint(equalToConstant: 120),
+                        
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 24),

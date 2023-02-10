@@ -20,6 +20,7 @@
 		841C27832990322A0011E0A6 /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C27822990322A0011E0A6 /* CourseViewCell.swift */; };
 		841C278529903AD50011E0A6 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C278429903AD50011E0A6 /* CollectionHeaderView.swift */; };
 		841C278A299166A30011E0A6 /* AppAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C2789299166A30011E0A6 /* AppAlerts.swift */; };
+		843BBA2429964E3A00811959 /* ButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBA2329964E3A00811959 /* ButtonContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		841C27822990322A0011E0A6 /* CourseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
 		841C278429903AD50011E0A6 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		841C2789299166A30011E0A6 /* AppAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlerts.swift; sourceTree = "<group>"; };
+		843BBA2329964E3A00811959 /* ButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				841C276C298FD9F20011E0A6 /* InternshipViewController.swift */,
 				841C278029902EB30011E0A6 /* CollectionExtensions.swift */,
+				843BBA2329964E3A00811959 /* ButtonContainerView.swift */,
 				841C27822990322A0011E0A6 /* CourseViewCell.swift */,
 				841C278429903AD50011E0A6 /* CollectionHeaderView.swift */,
 				841C2789299166A30011E0A6 /* AppAlerts.swift */,
@@ -200,6 +203,7 @@
 				841C278129902EB30011E0A6 /* CollectionExtensions.swift in Sources */,
 				841C277B299027F60011E0A6 /* ItemData.swift in Sources */,
 				841C277F29902A360011E0A6 /* MockData.swift in Sources */,
+				843BBA2429964E3A00811959 /* ButtonContainerView.swift in Sources */,
 				841C277D299028290011E0A6 /* SectionData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
