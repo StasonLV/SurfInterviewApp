@@ -27,14 +27,20 @@ final class ImageViewController: UIViewController {
     private func prepareMainVC() {
         let myVC = InternshipViewController()
         if let sheet = myVC.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
+            sheet.detents = [
+                .large(),
+                .custom(resolver: { _ in
+                    return 290
+                }),
+                .custom(resolver: { _ in
+                    return 480
+                })
+            ]
             sheet.preferredCornerRadius = 30
         }
         self.present(myVC, animated: true, completion: nil)
         myVC.isModalInPresentation = true
     }
-    
-
 }
 
 //MARK: Экстеншн для фоновой картинки
