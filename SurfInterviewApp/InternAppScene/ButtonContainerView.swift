@@ -32,6 +32,7 @@ final class ButtonContainerView: UIView {
         }
     }
 
+    //MARK: Создание элементов вью
     private let stackForButtons: UIStackView = {
         let stack = UIStackView()
         stack.alignment = .center
