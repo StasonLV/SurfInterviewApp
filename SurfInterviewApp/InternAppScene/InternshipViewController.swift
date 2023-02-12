@@ -12,7 +12,7 @@ final class InternshipViewController: UIViewController {
     private enum Constants {
         enum FontConstants {
             static let nameLabelText: String = "Стажировка в Surf"
-            static let nameLabelFont: UIFont = .systemFont(ofSize: 24, weight: .bold)
+            static let nameLabelFont = UIFont(name: Fonts.sfProBold, size: 24)
             static let nameLabelFontColor: UIColor = UIColor(
                 red: 0.192,
                 green: 0.192,
@@ -86,7 +86,7 @@ final class InternshipViewController: UIViewController {
             buttonView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             buttonView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             buttonView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            buttonView.heightAnchor.constraint(equalToConstant: 120),
+            buttonView.heightAnchor.constraint(equalToConstant: 125),
 
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),

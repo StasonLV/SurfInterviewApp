@@ -11,7 +11,7 @@ final class CollectionHeaderView: UICollectionReusableView {
     // MARK: - константы
     private enum Constants {
         enum FontConstants {
-            static let headerFont: UIFont = .systemFont(ofSize: 16, weight: .regular)
+            static let headerFont = UIFont(name: Fonts.sfProRegular, size: 14)
             static let headerFontColor: UIColor = UIColor(
                 red: 0.588,
                 green: 0.584,

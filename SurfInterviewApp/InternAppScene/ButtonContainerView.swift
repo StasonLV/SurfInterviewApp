@@ -12,6 +12,7 @@ final class ButtonContainerView: UIView {
     private enum Constants {
         enum ButtonConstants {
             static let title: String = "Отправить заявку"
+            static let buttonTitleFont = UIFont(name: Fonts.sfProMedium, size: 16)
             static let cornerRad: CGFloat = 32
             static let color: UIColor = UIColor(
                 red: 0.192,
@@ -20,9 +21,9 @@ final class ButtonContainerView: UIView {
                 alpha: 1
             )
         }
-        enum FontConstants {
+        enum ApplyLabelConstants {
             static let applyLabelText: String = "Хочешь к нам?"
-            static let applyLabelFont: UIFont = .systemFont(ofSize: 14, weight: .regular)
+            static let applyLabelFont = UIFont(name: Fonts.sfProRegular, size: 14)
             static let applyLabelFontColor: UIColor = UIColor(
                 red: 0.588,
                 green: 0.584,
@@ -44,9 +45,9 @@ final class ButtonContainerView: UIView {
 
     private let applyLabel: UILabel = {
         let label = UILabel()
-        label.text = Constants.FontConstants.applyLabelText
-        label.font = Constants.FontConstants.applyLabelFont
-        label.textColor = Constants.FontConstants.applyLabelFontColor
+        label.text = Constants.ApplyLabelConstants.applyLabelText
+        label.font = Constants.ApplyLabelConstants.applyLabelFont
+        label.textColor = Constants.ApplyLabelConstants.applyLabelFontColor
         label.sizeToFit()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -55,6 +56,7 @@ final class ButtonContainerView: UIView {
     private let applyButton: UIButton = {
         let button = UIButton()
         button.setTitle(Constants.ButtonConstants.title, for: .normal)
+        button.titleLabel?.font = Constants.ButtonConstants.buttonTitleFont
         button.backgroundColor = Constants.ButtonConstants.color
         button.layer.cornerRadius = Constants.ButtonConstants.cornerRad
         button.translatesAutoresizingMaskIntoConstraints = false

@@ -21,6 +21,10 @@
 		841C278529903AD50011E0A6 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C278429903AD50011E0A6 /* CollectionHeaderView.swift */; };
 		841C278A299166A30011E0A6 /* AppAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C2789299166A30011E0A6 /* AppAlerts.swift */; };
 		843BBA2429964E3A00811959 /* ButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBA2329964E3A00811959 /* ButtonContainerView.swift */; };
+		843BBA2F2999397600811959 /* SF-Pro-Display-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 843BBA2E2999397600811959 /* SF-Pro-Display-Regular.ttf */; };
+		843BBA31299939EC00811959 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBA30299939EC00811959 /* Fonts.swift */; };
+		843BBA3329993B4D00811959 /* SF-Pro-Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 843BBA3229993B4C00811959 /* SF-Pro-Display-Medium.ttf */; };
+		843BBA3529993B9200811959 /* SF-Pro-Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 843BBA3429993B9200811959 /* SF-Pro-Display-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		841C278429903AD50011E0A6 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		841C2789299166A30011E0A6 /* AppAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlerts.swift; sourceTree = "<group>"; };
 		843BBA2329964E3A00811959 /* ButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonContainerView.swift; sourceTree = "<group>"; };
+		843BBA2E2999397600811959 /* SF-Pro-Display-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.ttf"; sourceTree = "<group>"; };
+		843BBA30299939EC00811959 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		843BBA3229993B4C00811959 /* SF-Pro-Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.ttf"; sourceTree = "<group>"; };
+		843BBA3429993B9200811959 /* SF-Pro-Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 		841C2744298FC9A30011E0A6 /* SurfInterviewApp */ = {
 			isa = PBXGroup;
 			children = (
+				843BBA252999350A00811959 /* Font */,
 				841C278D2992AC1B0011E0A6 /* ApplicationLayer */,
 				841C2779299027B90011E0A6 /* BaseViewScene */,
 				841C2759298FCABB0011E0A6 /* InternAppScene */,
@@ -91,6 +100,7 @@
 				841C27822990322A0011E0A6 /* CourseViewCell.swift */,
 				841C278429903AD50011E0A6 /* CollectionHeaderView.swift */,
 				841C2789299166A30011E0A6 /* AppAlerts.swift */,
+				843BBA30299939EC00811959 /* Fonts.swift */,
 				841C27862991495C0011E0A6 /* DataFiles */,
 			);
 			path = InternAppScene;
@@ -121,6 +131,16 @@
 				841C2745298FC9A30011E0A6 /* AppDelegate.swift */,
 			);
 			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		843BBA252999350A00811959 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				843BBA2E2999397600811959 /* SF-Pro-Display-Regular.ttf */,
+				843BBA3229993B4C00811959 /* SF-Pro-Display-Medium.ttf */,
+				843BBA3429993B9200811959 /* SF-Pro-Display-Bold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +202,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				841C2752298FC9AA0011E0A6 /* LaunchScreen.storyboard in Resources */,
+				843BBA3529993B9200811959 /* SF-Pro-Display-Bold.ttf in Resources */,
+				843BBA3329993B4D00811959 /* SF-Pro-Display-Medium.ttf in Resources */,
 				841C274F298FC9AA0011E0A6 /* Assets.xcassets in Resources */,
+				843BBA2F2999397600811959 /* SF-Pro-Display-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +223,7 @@
 				841C278A299166A30011E0A6 /* AppAlerts.swift in Sources */,
 				841C27832990322A0011E0A6 /* CourseViewCell.swift in Sources */,
 				841C2748298FC9A30011E0A6 /* SceneDelegate.swift in Sources */,
+				843BBA31299939EC00811959 /* Fonts.swift in Sources */,
 				841C278129902EB30011E0A6 /* CollectionExtensions.swift in Sources */,
 				841C277B299027F60011E0A6 /* ItemData.swift in Sources */,
 				841C277F29902A360011E0A6 /* MockData.swift in Sources */,
@@ -347,7 +371,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SurfInterviewApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -379,7 +403,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SurfInterviewApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";

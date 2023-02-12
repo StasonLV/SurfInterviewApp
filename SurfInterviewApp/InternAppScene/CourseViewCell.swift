@@ -11,7 +11,7 @@ final class CourseViewCell: UICollectionViewCell {
     // MARK: - константы
     private enum Constants {
         enum FontConstants {
-            static let courseFont: UIFont = .systemFont(ofSize: 14, weight: .medium)
+            static let courseFont = UIFont(name: "SFProDisplay-Medium", size: 14)
             static let selectedFontColor: UIColor = UIColor(
                 red: 1,
                 green: 1,
