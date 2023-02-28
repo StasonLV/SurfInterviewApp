@@ -1,3 +1,9 @@
+![Language Swift](https://user-images.githubusercontent.com/98527464/221845339-7f3d150f-e55d-4ce5-b286-0a79a3f86d96.svg)
+![Arcitecture MVC](https://user-images.githubusercontent.com/98527464/221843408-9a856d94-7958-456b-9373-1ca1e91f79ea.svg)
+![Version iOS 15](https://user-images.githubusercontent.com/98527464/221845480-4f89a7a3-a924-4690-a3a1-dd513128bdbf.svg)
+![UI CompositionalLayout](https://user-images.githubusercontent.com/98527464/221845878-366bd2eb-99aa-403e-b6e6-bc1e4cd27354.svg)
+![UI SheetPresentation](https://user-images.githubusercontent.com/98527464/221845880-a9a3dd2b-beac-4e20-9c7d-a9fa2eadd588.svg)
+
 # Surf Internship App
 
 Одноэкранное приложение-визитка с описанием направлений стажировки.
